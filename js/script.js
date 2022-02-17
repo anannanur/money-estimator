@@ -24,3 +24,31 @@ function totalBalance(totalExpense) {
 }
 
 
+// finding saving amount 
+document.getElementById("save").addEventListener("click", function () {
+
+    const incomeAmount = parseFloat(document.getElementById('income').value);
+    const savingPercentage = parseFloat(document.getElementById('saving-percentage').value);
+    const savingAmount = (incomeAmount * savingPercentage) / 100;
+    const savingAmountText = document.getElementById("saving-amount");
+    savingAmountText.innerText = savingAmount;
+    const totalBalance = document.getElementById("balance").innerText;
+    updateRemainingBalance(totalBalance, savingAmount);
+})
+
+// finding remaining balance 
+function updateRemainingBalance(totalBalance, savingAmount) {
+
+    // #error handling 
+    if (savingAmount > totalBalance) {
+        alert('Your saving amount is more than your total balance,please decrease your saving-percentage');
+        const savingAmountText = document.getElementById("saving-amount");
+        savingAmountText.innerText = "";
+
+    }
+    else if (savingAmount < totalBalance) {
+        const remainingBalance = totalBalance - savingAmount;
+        const remainingAmountText = document.getElementById('remaining-amount');
+        remainingAmountText.innerText = remainingBalance;
+    }
+}
