@@ -41,12 +41,13 @@ function updateRemainingBalance(totalBalance, savingAmount) {
 
     // #error handling 
     if (savingAmount > totalBalance) {
-        alert('Your saving amount is more than your total balance,please decrease your saving-percentage');
+        // alert('Your saving amount is more than your total balance,please decrease your saving-percentage');
+        document.getElementById('alert-msg').style.display = "block";
         const savingAmountText = document.getElementById("saving-amount");
         savingAmountText.innerText = "";
 
     }
-    else if (savingAmount < totalBalance) {
+    else{
         const remainingBalance = totalBalance - savingAmount;
         const remainingAmountText = document.getElementById('remaining-amount');
         remainingAmountText.innerText = remainingBalance;

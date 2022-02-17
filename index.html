@@ -11,6 +11,8 @@
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <!-- favicon  -->
     <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
+    <!-- vanilla CSS -->
+    <link rel="stylesheet" href="css/style.css">
 
     <title>Money Calculator</title>
 </head>
@@ -77,6 +79,9 @@
                                 <button type="button" id="save" class="btn btn-primary px-4 py-2">Save</button>
                             </div>
                         </div>
+                        <h6 id="alert-msg">Your saving amount is more than current balance,
+                            please decrease your percentage value
+                        </h6>
                         <h3 class="text-center">Saving amount : <span id="saving-amount"></span></h3>
                         <h3 class="text-center">Remaining balance : <span id="remaining-amount"></span> </h3>
                     </form>
